@@ -1,10 +1,11 @@
 import React from "react"
 import TrackMap from "./components/TrackMap"
-import PassTimes from "./components/PassTimes"
+
 
 import { Container, AppBar, Toolbar, Typography } from "@material-ui/core"
 
 require('dotenv').config();
+
 
 function App() {
   return (
@@ -16,11 +17,9 @@ function App() {
           </Typography>
         </Toolbar>
       </AppBar>
-      <Container>
-        {<TrackMap />}
-        <PassTimes />
+      <Container maxWidth='lg'  >
+        <TrackMap />
       </Container>
-
     </div>
 
   );

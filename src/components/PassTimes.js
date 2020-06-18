@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Predictions from "./Predictions"
+import { Button, CardContent, CardActions, Typography, Card, Box, CircularProgress } from "@material-ui/core";
 
 const PassTimes = () => {
-  const [geolocationAvailable, setIsGeolocationAvailable] = useState(null)
   const [position, setPosition] = useState({ lat: null, lng: null })
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -16,8 +16,7 @@ const PassTimes = () => {
 
   useEffect(() => {
     if (clicked) {
-      "geolocation" in navigator ? setIsGeolocationAvailable(true) : setIsGeolocationAvailable(false)
-      if (geolocationAvailable) {
+      if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(
           function (position) {
             setPosition({
@@ -37,15 +36,21 @@ const PassTimes = () => {
           }
         )
       }
+
+
     }
-  }, [clicked, geolocationAvailable])
+  }, [clicked])
 
   if (clicked) {
-    if (geolocationAvailable) {
+    if ("geolocation" in navigator) {
       if (error) {
-        return <h2>Error Code =  {error.code} - {error.message}</h2>
+        return <Typography variant="h4" color='secondary' style={{ textAlign: 'center', marginTop: '2.25em', marginBottom: '1em' }}> Error Code =  {error.code} - {error.message}</Typography>
       } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return (
+          <Box display="flex" justifyContent="center" alignItems="center" m={2}>
+            <CircularProgress />
+          </Box>
+        )
       } else {
         return (
           <div>
@@ -54,17 +59,22 @@ const PassTimes = () => {
         )
       }
     } else {
-      return <h2>Geolocalization Not Available</h2>
+      return <Typography variant="h4" color='secondary' style={{ textAlign: 'center', marginTop: '2.25em', marginBottom: '1em' }}> Geolocalization Not Available</Typography>
+
     }
   } else {
     return (
-      <div>
-        <p>The international space station (ISS) is an orbital outpost circling high above out heads.
-        Sometimes it’s overhead, but when? It depends on your location.
-        Allow to get your location to show the next time that the ISS will be over your head.
-        </p>
-        <button onClick={handleClick}>Get you current location</button>
-      </div>
+      <Card >
+        <CardContent >
+          <Typography variant="body2" color="textSecondary">The international space station (ISS) is an orbital outpost circling high above out heads.
+          Sometimes it’s overhead, but when?
+          Allow to get your location to show the next time the ISS will be visible.
+          </Typography>
+        </CardContent>
+        <CardActions >
+          <Button onClick={handleClick}>Get you current location</Button>
+        </CardActions>
+      </Card>
     )
 
   }
