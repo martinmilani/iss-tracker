@@ -6,7 +6,7 @@ const Predictions = (props) => {
   const [data, setData] = useState({ startUTC: 0, endUTC: 0, duration: 0 })
   const [error, setError] = useState(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const PASS_TIMES_URL = `http://www.n2yo.com/rest/v1/satellite/visualpasses/25544/${props.lat}/${props.lng}/0/5/300/&apiKey=${process.env.REACT_APP_API_KEY_N2YO}`
+  const PASS_TIMES_URL = `https://www.n2yo.com/rest/v1/satellite/visualpasses/25544/${props.lat}/${props.lng}/0/5/300/&apiKey=${process.env.REACT_APP_API_KEY_N2YO}`
   const [address, setAddress] = useState(null)
   const { lat, lng } = props
   const [passesCount, setPassesCount] = useState(0)
