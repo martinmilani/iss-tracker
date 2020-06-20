@@ -83,7 +83,7 @@ const Predictions = (props) => {
           <Typography variant="h6" color="textSecondary">Next time ISS is visible</Typography>
           <Typography variant="body1" color="textSecondary">Start: {data.startUTC.toString()} </Typography>
           <Typography variant="body1" color="textSecondary">End:  {data.endUTC.toString()} </Typography>
-          <Typography variant="body1" color="textSecondary">Duration: {data.duration} min.</Typography>
+          <Typography variant="body1" color="textSecondary">Duration: {data.duration.toFixed(2)} min.</Typography>
         </CardContent>
       </Card>
     )
