@@ -18,7 +18,7 @@ yarn start
 ```bash
 npm start
 ```
-You also need your own[Google Maps Api](https://cloud.google.com/maps-platform/)
+You also need your own [Google Maps Api](https://cloud.google.com/maps-platform/)
 and [N2YO api key](https://www.n2yo.com/api/)<br />
 
 Runs the app in the development mode. <br />
