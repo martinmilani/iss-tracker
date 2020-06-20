@@ -1,4 +1,4 @@
-# ISS Tracker
+# ISS Tracker React App
 
 ![ISS Tracker](/chrome-capture.gif)
 
