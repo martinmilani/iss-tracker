@@ -1,6 +1,6 @@
 # ISS Tracker React App
 
-![ISS Tracker](/chrome-capture.gif)
+![ISS Tracker](/ISS-tracker.jpg)
 
 [Demo](https://iss-live-tracker.herokuapp.com/)
 
