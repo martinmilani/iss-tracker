@@ -64,7 +64,7 @@ const PassTimes = () => {
     }
   } else {
     return (
-      <Card >
+      <Card style={{ padding: '1em' }}>
         <CardContent >
           <Typography variant="body2" color="textSecondary">The international space station (ISS) is an orbital outpost circling high above out heads.
           Sometimes it’s overhead, but when?
@@ -72,7 +72,7 @@ const PassTimes = () => {
           </Typography>
         </CardContent>
         <CardActions >
-          <Button onClick={handleClick}>Get you current location</Button>
+          <Button variant="contained" color="primary" onClick={handleClick} style={{ borderRadius: '60px' }}>Get you current location</Button>
         </CardActions>
       </Card>
     )

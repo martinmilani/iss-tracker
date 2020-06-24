@@ -2,7 +2,9 @@ import { CircularProgress, Typography, Box, Grid, Card, CardContent } from '@mat
 import React, { useState, useEffect } from "react";
 import GoogleMapReact from 'google-map-react';
 import PassTimes from './PassTimes'
+
 require('dotenv').config();
+
 
 
 const ISS_URL = "https://api.wheretheiss.at/v1/satellites/25544"
@@ -90,10 +92,11 @@ const TrackMap = () => {
           <Grid item xs={12} sm={6} md={3}>
             <Card style={{ paddingRight: '1em' }}>
               <CardContent>
+
                 <Typography color="textSecondary" variant="subtitle1">
                   Latitude:
-                  </Typography>
-                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em' }}>
+                </Typography>
+                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em', color: '#5C6BC0', fontWeight: '900' }}>
                   {data.lat.toFixed(3)}°
                   </Typography>
               </CardContent>
@@ -105,7 +108,7 @@ const TrackMap = () => {
                 <Typography color="textSecondary" variant="subtitle1">
                   Longitude:
                   </Typography>
-                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em' }}>
+                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em', color: '#5C6BC0', fontWeight: '900' }}>
                   {data.lng.toFixed(3)}°
                   </Typography>
               </CardContent>
@@ -117,8 +120,8 @@ const TrackMap = () => {
                 <Typography color="textSecondary" variant="subtitle1">
                   Altitude:
                   </Typography>
-                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em' }}>
-                  {data.alt.toFixed(1)}<span style={{ fontSize: '0.75em' }}> km</span>
+                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em', color: '#5C6BC0', fontWeight: '900' }}>
+                  {data.alt.toFixed(1)}<span style={{ fontSize: '0.75em', color: '#5C6BC0', fontWeight: '900' }}> km</span>
                 </Typography>
               </CardContent>
             </Card>
@@ -129,8 +132,8 @@ const TrackMap = () => {
                 <Typography color="textSecondary" variant="subtitle1">
                   Velocity:
                   </Typography>
-                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em' }}>
-                  {data.vel.toFixed(1)} <span style={{ fontSize: '0.75em' }}> km</span>
+                <Typography variant="h4" style={{ textAlign: 'right', paddingTop: '0.5em', color: '#5C6BC0', fontWeight: '900' }}>
+                  {data.vel.toFixed(1)} <span style={{ fontSize: '0.75em', color: '#5C6BC0', fontWeight: '900' }}> km</span>
                 </Typography>
               </CardContent>
             </Card>
